@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <bean id="bookDao" class="com.wsw.dao.impl.BookDaoImpl">
+        <!--注入数组类型数据-->
+        <property name="array">
+            <array>
+                <value>1</value>
+                <value>2</value>
+                <value>3</value>
+                <value>4</value>
+            </array>
+        </property>
+        <!--注入List类型数据-->
+        <property name="list">
+            <list>
+                <value>1</value>
+                <value>2</value>
+                <value>3</value>
+                <value>4</value>
+            </list>
+        </property>
+        <!--注入Set类型数据-->
+        <property name="set">
+            <set>
+                <value>1</value>
+                <value>2</value>
+                <value>3</value>
+                <value>3</value>
+                <value>4</value>
+            </set>
+        </property>
+        <!--注入Map类型数据-->
+        <property name="map">
+            <map>
+                <entry key="number1" value="1"/>
+                <entry key="number2" value="2"/>
+                <entry key="number3" value="3"/>
+                <entry key="number4" value="4"/>
+            </map>
+        </property>
+        <!--注入Properties类型数据-->
+        <property name="properties">
+            <props>
+                <prop key="province">Jiangxi</prop>
+                <prop key="city">Nanchang</prop>
+                <prop key="name">Jerry</prop>
+                <prop key="age">18</prop>
+            </props>
+        </property>
+    </bean>
+</beans>
