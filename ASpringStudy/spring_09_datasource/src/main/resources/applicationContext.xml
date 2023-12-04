@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--2:开启context命名空间-->
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="
+       http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/context
+       http://www.springframework.org/schema/context/spring-context.xsd">
+    <!--3:加载properties配置文件-->
+    <context:property-placeholder location="jdbc.properties" system-properties-mode="NEVER"/>
+    <!--方式一 -->
+    <context:property-placeholder location="jdbc.properties, jdbc2.properties" system-properties-mode="NEVER"/>
+    <!--方式二-->
+    <context:property-placeholder location="*.properties" system-properties-mode="NEVER"/>
+    <!--方式三 -->
+    <context:property-placeholder location="classpath:*.properties" system-properties-mode="NEVER"/>
+    <!--方式四-->
+    <context:property-placeholder location="classpath*:*.properties" system-properties-mode="NEVER"/>
+
+    <!--4:完成属性注入-->
+    <bean id="dataSource2" class="com.alibaba.druid.pool.DruidDataSource">
+        <property name="driverClassName" value="${jdbc.driver}"/>
+        <property name="url" value="${jdbc.url}"/>
+        <property name="username" value="${jdbc.username}"/>
+        <property name="password" value="${jdbc.password}"/>
+    </bean>
+
+    <!--步骤2:配置第三方bean-->
+    <bean id="dataSource" class="com.alibaba.druid.pool.DruidDataSource">
+        <property name="driverClassName" value="com.mysql.cj.jdbc.Driver"/>
+        <property name="url" value="jdbc:mysql://localhost:3306/spring_db"/>
+        <property name="username" value="root"/>
+        <property name="password" value="0420"/>
+    </bean>
+
+    <bean id="bookDao" class="com.wsw.dao.impl.BookDaoImpl">
+        <property name="username" value="${jdbc.username}"/>
+    </bean>
+</beans>
