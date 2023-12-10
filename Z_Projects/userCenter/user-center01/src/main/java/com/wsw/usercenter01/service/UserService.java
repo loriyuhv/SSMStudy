@@ -34,4 +34,5 @@ public interface UserService extends IService<User> {
      * @return 安全的user对象
      */
     User getSafetyUser(User originUser);
+
 }
