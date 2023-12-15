@@ -77,45 +77,47 @@ class UserServiceTest {
         String userAccount = "Tom";
         String userPassword = "";
         String checkPassword = "123456";
-        long result = userService.userRegister(userAccount, userPassword, checkPassword);
+        String plantCode = "0001";
+        long result = userService.userRegister(userAccount, userPassword, checkPassword, plantCode);
         Assertions.assertEquals(-1, result);
 
         // 2. 账户的话不小于4位
         userAccount = "Tom";
         userPassword = "12345678";
         checkPassword = "12345678";
-        result = userService.userRegister(userAccount, userPassword, checkPassword);
+        plantCode = "0001";
+        result = userService.userRegister(userAccount, userPassword, checkPassword, plantCode);
         Assertions.assertEquals(-1, result);
 
         // 3. 密码不小于8位
         userAccount = "Alan";
         userPassword = "123456";
         checkPassword = "123456";
-        result = userService.userRegister(userAccount, userPassword, checkPassword);
+        result = userService.userRegister(userAccount, userPassword, checkPassword, plantCode);
         Assertions.assertEquals(-1, result);
 
         // 4. 账户不包含特殊字符
         userAccount = "@Jerry";
         userPassword = "12345678";
         checkPassword = "12345678";
-        result = userService.userRegister(userAccount, userPassword, checkPassword);
+        result = userService.userRegister(userAccount, userPassword, checkPassword, plantCode);
         Assertions.assertEquals(-1, result);
 
         // 5. 密码和校验密码相同
         userPassword = "123456789";
         checkPassword = "123456788";
-        result = userService.userRegister(userAccount, userPassword, checkPassword);
+        result = userService.userRegister(userAccount, userPassword, checkPassword, plantCode);
         Assertions.assertEquals(-1, result);
 
         // 7. 账户不能重复
         userAccount = "Jerry";
         userPassword = "12345678";
         checkPassword = "12345678";
-        result = userService.userRegister(userAccount, userPassword, checkPassword);
+        result = userService.userRegister(userAccount, userPassword, checkPassword, plantCode);
 
         // 插入用户数据
         userAccount = "Marry";
-        result = userService.userRegister(userAccount, userPassword, checkPassword);
+        result = userService.userRegister(userAccount, userPassword, checkPassword, plantCode);
         Assertions.assertTrue(result > 0);
         System.out.println("success!!!");
     }

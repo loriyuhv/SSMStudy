@@ -57,14 +57,9 @@ public class User implements Serializable {
     private String email;
 
     /**
-     * 状态 0 - 正常
+     * 状态 0：正常
      */
     private Integer userStatus;
-
-    /**
-     * 角色 0 - 普通用户 1 - 管理员
-     */
-    private Integer userRole;
 
     /**
      * 创建时间
@@ -80,6 +75,16 @@ public class User implements Serializable {
      * 是否删除
      */
     private Integer isDelete;
+
+    /**
+     * 用户角色 0 - 普通用户 1 - 管理员
+     */
+    private Integer userRole;
+
+    /**
+     * 星球编号
+     */
+    private String plantCode;
 
     @TableField(exist = false)
     private static final long serialVersionUID = 1L;

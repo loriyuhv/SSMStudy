@@ -2,6 +2,8 @@ package com.wsw.usercenter01.service.impl;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
+import com.wsw.usercenter01.common.ErrorCode;
+import com.wsw.usercenter01.exception.BusinessException;
 import com.wsw.usercenter01.model.domain.User;
 import com.wsw.usercenter01.service.UserService;
 import com.wsw.usercenter01.mapper.UserMapper;
@@ -38,26 +40,30 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User>
     UserMapper userMapper;
 
     @Override
-    public long userRegister(String userAccount, String userPassword, String checkPassword) {
+    public long userRegister(String userAccount, String userPassword, String checkPassword, String plantCode) {
         // 1. 校验
         // if (userAccount == null || userPassword == null || checkPassword == null)
-        if (StringUtils.isAnyBlank(userAccount, userPassword, checkPassword)) {
+        if (StringUtils.isAnyBlank(userAccount, userPassword, checkPassword, plantCode)) {
             // todo 修改为自定义异常
-            return -1;
+            throw new BusinessException(ErrorCode.PARAMS_ERROR, "参数为空");
         }
         if (userAccount.length() < 4) {
-            return -1;
+            throw new BusinessException(ErrorCode.PARAMS_ERROR, "用户账户小于4位");
+        }
+
+        if (plantCode.length() > 5) {
+            throw new BusinessException(ErrorCode.PARAMS_ERROR, "星球编号大于5位");
         }
 
         if (userPassword.length() < 8 || checkPassword.length() < 8) {
-            return -1;
+            throw new BusinessException(ErrorCode.PARAMS_ERROR, "用户密码过短");
         }
         // 账户不能包含特殊字符
         // 匹配所有特殊字符
         String regEx="[`~!@#$%^&*()+=|{}':; ',\\[\\].<>/?~！@#￥%……&*（）——+|{}【】‘；：”“’。，、？]";
         Matcher matcher = Pattern.compile(regEx).matcher(userAccount);
         if (matcher.find()) {
-            return -1;
+            throw new BusinessException(ErrorCode.PARAMS_ERROR, "账户包含特殊字符");
         }
 
         // 密码和校验密码相同
@@ -72,6 +78,14 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User>
         if (count > 0) {
             return -1;
         }
+
+        // 星球编号不能重复
+        queryWrapper = new QueryWrapper<>();
+        queryWrapper.eq("plantCode", plantCode);
+        count = this.count(queryWrapper);
+        if (count > 0) {
+            return -1;
+        }
         // 2. 对密码进行加密
         String encryptPassword = DigestUtils.md5DigestAsHex((SALT + userPassword).getBytes());
 
@@ -79,6 +93,7 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User>
         User user = new User();
         user.setUserAccount(userAccount);
         user.setUserPassword(encryptPassword);
+        user.setPlantCode(plantCode);
         boolean saveResult = this.save(user);
         System.out.println(saveResult);
         if (!saveResult) {
@@ -136,6 +151,9 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User>
      */
     @Override
     public User getSafetyUser(User originUser) {
+        if (originUser == null) {
+            return null;
+        }
         User safetyUser = new User();
         safetyUser.setId(originUser.getId());
         safetyUser.setUsername(originUser.getUsername());
@@ -147,7 +165,19 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User>
         safetyUser.setUserStatus(originUser.getUserStatus());
         safetyUser.setUserRole(originUser.getUserRole());
         safetyUser.setCreateTime(originUser.getCreateTime());
+        safetyUser.setPlantCode(originUser.getPlantCode());
         return safetyUser;
+    }
+
+    /**
+     * 用户注销
+     * @param request 请求体
+     */
+    @Override
+    public int userLogout(HttpServletRequest request) {
+        // 移除登录态
+        request.getSession().removeAttribute(USER_LOGIN_STATE);
+        return 1;
     }
 }
 
