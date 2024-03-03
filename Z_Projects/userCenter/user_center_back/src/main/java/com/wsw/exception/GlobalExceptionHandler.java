@@ -1,5 +1,8 @@
 package com.wsw.exception;
 
+import ch.qos.logback.core.spi.ErrorCodes;
+import com.wsw.common.ErrorCode;
+import com.wsw.common.ErrorShowType;
 import com.wsw.common.ResponseStructure;
 import com.wsw.common.ResultUtils;
 import lombok.extern.slf4j.Slf4j;
@@ -16,10 +19,10 @@ public class GlobalExceptionHandler {
         return ResultUtils.error(e.getCode(), e.getMessage(), e.getShowType());
     }
 
-    // @ExceptionHandler(RuntimeException.class)
-    // public BaseResponse runtimeExceptionHandler(RuntimeException e) {
-    //     log.error("runtimeException", e);
-    //     return ResultUtils.error(ErrorCode.SYSTEM_ERROR, e.getMessage(), "");
-    // }
+     @ExceptionHandler(RuntimeException.class)
+     public ResponseStructure runtimeExceptionHandler(RuntimeException e) {
+         log.error("runtimeException", e);
+         return ResultUtils.error(ErrorCode.SYSTEM_ERROR.getCode(), ErrorCode.SYSTEM_ERROR.getMessage(), ErrorShowType.ERROR_MESSAGE.getNumber());
+     }
 
 }

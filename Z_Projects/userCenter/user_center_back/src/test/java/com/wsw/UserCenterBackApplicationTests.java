@@ -15,4 +15,9 @@ class UserCenterBackApplicationTests {
 		System.out.println(encryptPassword);
 	}
 
+	@Test
+	void sum() {
+		System.out.println("Hello world");
+	}
+
 }
