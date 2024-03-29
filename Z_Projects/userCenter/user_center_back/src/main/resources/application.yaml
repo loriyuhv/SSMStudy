@@ -4,9 +4,9 @@ spring:
   application:
     name: user-center
   datasource:
-    driver-class-name: com.mysql.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/user_center
-    # url: jdbc:mysql://192.168.41.100:3306/user_center?useSSL=false
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    # url: jdbc:mysql://localhost:3306/user_center
+    url: jdbc:mysql://192.168.41.101:3306/user_center?useSSL=false
     username: root
     password: "0420"
   # session失效时间 一天86400

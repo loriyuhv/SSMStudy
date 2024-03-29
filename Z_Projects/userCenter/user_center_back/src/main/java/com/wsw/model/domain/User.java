@@ -71,11 +71,6 @@ public class User implements Serializable {
     private String userGroup;
 
     /**
-     * 标签
-     */
-    private String tag;
-
-    /**
      * 城市
      */
     private String country;

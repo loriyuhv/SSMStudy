@@ -16,7 +16,6 @@
             <result property="signature" column="signature" jdbcType="VARCHAR"/>
             <result property="title" column="title" jdbcType="VARCHAR"/>
             <result property="userGroup" column="user_group" jdbcType="VARCHAR"/>
-            <result property="tag" column="tag" jdbcType="VARCHAR"/>
             <result property="country" column="country" jdbcType="VARCHAR"/>
             <result property="access" column="access" jdbcType="VARCHAR"/>
             <result property="province" column="province" jdbcType="VARCHAR"/>
@@ -33,7 +32,7 @@
         id,username,userid,
         password,name,gender,
         avatar,email,signature,
-        title,user_group,tag,
+        title,user_group,
         country,access,province,
         city,address,phone,
         user_status,user_delete,create_time,

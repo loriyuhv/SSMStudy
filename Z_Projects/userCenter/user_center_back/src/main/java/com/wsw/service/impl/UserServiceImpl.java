@@ -14,7 +14,6 @@ import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.util.DigestUtils;
-import org.springframework.web.bind.annotation.GetMapping;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -35,8 +34,6 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User>
      * 盐值：混淆密码
      */
     private static final String SALT = "Jerry";
-
-
 
     @Autowired
     UserMapper userMapper;
@@ -151,7 +148,6 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User>
         safetyUser.setSignature(originUser.getSignature());
         safetyUser.setTitle(originUser.getTitle());
         safetyUser.setUserGroup(originUser.getUserGroup());
-        safetyUser.setTag(originUser.getTag());
         safetyUser.setCountry(originUser.getCountry());
         safetyUser.setAccess(originUser.getAccess());
         safetyUser.setProvince(originUser.getProvince());
@@ -175,7 +171,7 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User>
     }
 
     /**
-     * 用户注销实现类
+     * 用户注册实现类
      * @param userRegisterRequest 用户注册请求信息
      * @return 响应成功值
      */
