@@ -1,5 +1,6 @@
 package com.wsw.config;
 
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.web.context.WebApplicationContext;
 import org.springframework.web.context.support.AnnotationConfigWebApplicationContext;
 import org.springframework.web.servlet.support.AbstractDispatcherServletInitializer;
@@ -17,7 +18,6 @@ public class ServletContainersInitConfig extends AbstractDispatcherServletInitia
         AnnotationConfigWebApplicationContext context = new AnnotationConfigWebApplicationContext();
         context.register(SpringMvcConfig.class);
         return context;
-        // return null;
     }
 
     @Override
@@ -27,6 +27,8 @@ public class ServletContainersInitConfig extends AbstractDispatcherServletInitia
 
     @Override
     protected WebApplicationContext createRootApplicationContext() {
-        return null;
+        AnnotationConfigWebApplicationContext context = new AnnotationConfigWebApplicationContext();
+        context.register(SpringConfig.class);
+        return context;
     }
 }
