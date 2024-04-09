@@ -1,1 +1,31 @@
 1. 在Spring3.0开始，可以使用配置类来配置信息，不用web.xml了。
+
+一、启动服务器初始化过程
+1. 服务器启动，执行ServletContainersInitConfig类，初始化Web容器。功能类似于以前的web.xml
+2. 执行createServletApplicationContext方法，创建了WebApplicationContext对象。
+    该方法加载SpringMVC的配置类SpringMvcConfig来初始化SpringMVC的容器。
+3. 加载SpringMvcConfig配置类。
+    @Configuration
+    @ComponentScan("com.wsw.controller")
+    public class SpringMvcConfig {
+    }
+4. 执行@ComponentSan加载对应的Bean
+    - 扫描指定包及其子包下所有类上的注解，如UserController类上的@Controller注解
+
+5. 加载UserController，每个@RequestMapping的名称对应一个具体的方法。
+    @Controller
+        public class UserController{
+            @RequestMapping("/save")
+            @ResponseBody
+            public String save() {
+                return "{'msg':'hello world!!!'}"
+            }
+        }
+    - 此时，就建立了/save 和save方法的对应关系
+6. 执行getServletMappings方法，设定SpringMVC拦截请求的路径规则
+    protected String[] getServletMappings() {
+        return new String[]("/")
+    }
+    - /代表所拦截请求的路径规则，只有被拦截后才能交给SpringMVC来处理请求。
+
+

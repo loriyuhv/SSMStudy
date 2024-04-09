@@ -25,7 +25,6 @@ public class ServletContainersInitConfig extends AbstractDispatcherServletInitia
         AnnotationConfigWebApplicationContext ctx = new AnnotationConfigWebApplicationContext();
         // 加载具体的配置信息
         ctx.register(SpringMvcConfig.class);
-        System.out.println("Hello");
         return ctx;
     }
 
