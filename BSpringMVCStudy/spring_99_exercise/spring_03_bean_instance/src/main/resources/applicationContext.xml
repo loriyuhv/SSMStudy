@@ -2,17 +2,16 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
-    <!--方式一：构造方法-->
     <bean id="bookDao" class="com.wsw.dao.impl.BookDaoImpl"/>
+    <bean id="bookService" class="com.wsw.service.impl.BookServiceImpl">
+        <property name="bookDao" ref="bookDao"/>
+    </bean>
 
-    <!--方式二：使用静态工厂实例化bean-->
     <bean id="orderDao" class="com.wsw.factory.OrderDaoFactory" factory-method="getOrderDao"/>
 
-    <!-- 方式三：使用实例工厂实例化bean -->
-    <!--
-    <bean id="userFactory" class="com.wsw.factory.UserDaoFactory"/>
-    <bean id="userDao" factory-bean="userFactory" factory-method="getUserDao"/>
-    -->
-    <!-- 方式四：使用FactoryBean实例化bean -->
-    <bean id="userDao2" class="com.wsw.factory.UserDaoFactoryBean"/>
+    <!-- <bean id="userDaoFactory" class="com.wsw.factory.UserDaoFactory"/> -->
+    <!-- <bean id="userDao" factory-bean="userDaoFactory" factory-method="getUserDao"/> -->
+
+    <bean id="userDao" class="com.wsw.factory.UserDaoFactoryBean"/>
+
 </beans>
