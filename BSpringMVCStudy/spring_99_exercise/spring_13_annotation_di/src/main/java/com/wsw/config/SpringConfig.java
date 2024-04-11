@@ -2,6 +2,7 @@ package com.wsw.config;
 
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.PropertySource;
 
 /**
  * @author loriyuhv
@@ -11,5 +12,6 @@ import org.springframework.context.annotation.Configuration;
  */
 @Configuration
 @ComponentScan("com.wsw")
+@PropertySource(value = {"jdbc.properties"}, ignoreResourceNotFound = true)
 public class SpringConfig {
 }

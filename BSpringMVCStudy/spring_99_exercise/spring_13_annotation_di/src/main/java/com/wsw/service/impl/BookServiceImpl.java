@@ -4,6 +4,7 @@ import com.wsw.dao.BookDao;
 import com.wsw.service.BookService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Repository;
 
 /**
@@ -30,16 +31,14 @@ public class BookServiceImpl implements BookService {
     //     this.bookDao = bookDao;
     // }
 
-
-    // private final BookDao bookDao;
-    //
-    // public BookServiceImpl(BookDao bookDao) {
-    //     this.bookDao = bookDao;
-    // }
+    // @Value(value = "Jerry")
+    @Value("${username}")
+    private String name;
 
     @Override
     public void save() {
         System.out.println("book service save ...");
+        System.out.println("book service name:" + name);
         bookDao.save();
     }
 }
