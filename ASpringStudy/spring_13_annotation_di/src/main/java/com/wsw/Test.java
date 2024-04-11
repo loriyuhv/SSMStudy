@@ -17,7 +17,7 @@ public class Test {
     public static void main(String[] args) throws ClassNotFoundException, NoSuchFieldException, IllegalAccessException {
         Class<?> clazz = Class.forName("com.wsw.service.impl.BookServiceImpl");
         Field bookDao = clazz.getDeclaredField("bookDao");
-        BookService bookService = new BookServiceImpl();
+        BookService bookService = new BookServiceImpl(new BookDaoImpl());
         // 创建对象并通过暴力反射为私有属性进行设值
         bookDao.setAccessible(true);
         bookDao.set(bookService, new BookDaoImpl());

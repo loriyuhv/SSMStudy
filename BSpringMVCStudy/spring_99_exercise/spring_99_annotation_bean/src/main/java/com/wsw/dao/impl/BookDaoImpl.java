@@ -1,12 +1,16 @@
 package com.wsw.dao.impl;
 
 import com.wsw.dao.BookDao;
-import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Repository;
 
-// @Repository("bookDao")
-@Repository("bookDao1")
-@Primary
+/**
+ * @author loriyuhv
+ * @ClassName BookDaoImpl
+ * @date 2024/4/11 8:30
+ * @description TODO
+ */
+
+@Repository
 public class BookDaoImpl implements BookDao {
     @Override
     public void save() {

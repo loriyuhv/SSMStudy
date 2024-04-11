@@ -9,10 +9,10 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 public class APP {
     public static void main(String[] args) throws ClassNotFoundException {
         ApplicationContext context = new AnnotationConfigApplicationContext(Class.forName("com.wsw.config.SpringConfig"));
-        // BookService bean = context.getBean(BookService.class);
-        // bean.save();
-
-        BookDao bean = (BookDao) context.getBean("bookDao2");
+        BookService bean = context.getBean(BookService.class);
         bean.save();
+
+        // BookDao bean = (BookDao) context.getBean("bookDao2");
+        // bean.save();
     }
 }

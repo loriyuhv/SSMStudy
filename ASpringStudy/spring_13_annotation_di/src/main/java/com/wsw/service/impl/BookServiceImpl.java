@@ -8,9 +8,16 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class BookServiceImpl implements BookService {
-    @Autowired
-    @Qualifier("bookDao2")
-    private BookDao bookDao;
+    // 推荐使用构造器注入，构造器注入时，如果有同类型多个bean注入，为了解决类型冲突
+    //      需要使用@Primary指定主要bean。
+    private final BookDao bookDao;
+
+    public BookServiceImpl(BookDao bookDao) {
+        this.bookDao = bookDao;
+    }
+    // @Autowired
+    // @Qualifier("bookDao2")
+    // private BookDao bookDao;
 
     // public void setBookDao(BookDao bookDao) {
     //     this.bookDao = bookDao;
