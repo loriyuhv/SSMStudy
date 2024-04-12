@@ -4,7 +4,9 @@
 
 <configuration>
     <!-- 读取外部properties配置文件 -->
-    <properties resource="classpath:jdbc.properties"/>
+    <!-- <properties resource="classpath:jdbc.properties"></properties> -->
+    <properties resource="jdbc.properties"/>
+    <!-- <properties resource="classpath:jdbc.properties"/> -->
     <!-- 别名扫描的包路径 -->
     <typeAliases>
         <package name="com.wsw.domain"/>

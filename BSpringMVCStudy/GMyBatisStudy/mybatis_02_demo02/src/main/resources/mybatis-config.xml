@@ -2,16 +2,13 @@
 <!DOCTYPE configuration
         PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
         "https://mybatis.org/dtd/mybatis-3-config.dtd">
-
 <configuration>
-    <!-- environments：配置数据库连接环境信息，可以配置多个environment，通过default属性切换不同的environment -->
     <environments default="development">
         <environment id="development">
             <transactionManager type="JDBC"/>
-            <!-- 导入数据源 -->
             <dataSource type="POOLED">
                 <property name="driver" value="com.mysql.cj.jdbc.Driver"/>
-                <property name="url" value="jdbc:mysql://localhost:3306/spring_db?useSSL=false"/>
+                <property name="url" value="jdbc:mysql://localhost:3306/mybatis?useSSL=false"/>
                 <property name="username" value="root"/>
                 <property name="password" value="0420"/>
             </dataSource>
@@ -19,8 +16,6 @@
     </environments>
 
     <mappers>
-        <!-- 加载sql映射文件 -->
-        <!-- <mapper resource="com/wsw/mapper/userMapper.xml"/> -->
-        <package name="com.wsw.mapper"/>
+        <mapper resource="com/wsw/mapper/UserMapper.xml"/>
     </mappers>
 </configuration>
