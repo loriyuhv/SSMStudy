@@ -2,6 +2,7 @@ package com.wsw.mapper;
 
 import com.wsw.model.domain.User;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+import org.apache.ibatis.annotations.Select;
 
 /**
 * @author 23859
@@ -10,7 +11,8 @@ import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 * @Entity com.wsw.domain.User
 */
 public interface UserMapper extends BaseMapper<User> {
-
+    @Select("select * from user where id = #{id};")
+    User selectByIdUser(Integer id);
 }
 
 
