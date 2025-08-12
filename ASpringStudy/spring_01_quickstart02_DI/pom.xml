@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.wsw</groupId>
-    <artifactId>spring_01_quickstart_DI</artifactId>
+    <artifactId>spring_01_quickstart02_DI</artifactId>
     <version>1.0-SNAPSHOT</version>
 
     <properties>
@@ -18,7 +18,7 @@
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-context</artifactId>
-            <version>5.3.30</version>
+            <version>6.2.7</version>
         </dependency>
     </dependencies>
 

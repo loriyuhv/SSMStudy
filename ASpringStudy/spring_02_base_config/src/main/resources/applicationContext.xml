@@ -2,9 +2,9 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
-    <!--name:为bean指定别名，别名可以有多个，使用逗号，分号，空格进行分隔-->
+    <!-- name:为bean指定别名，别名可以有多个，使用逗号，分号，空格进行分隔 -->
     <bean id="bookDao" name="dao bookDao1" class="com.wsw.dao.impl.BookDaoImpl"/>
-    <!--scope：为bean设置作用范围，可选值为单例singleton，非单例prototype-->
+    <!-- scope：为bean设置作用范围，可选值为单例singleton，非单例prototype -->
     <bean id="bookService" class="com.wsw.service.impl.BookServiceImpl" scope="prototype">
         <property name="bookDao" ref="bookDao"/>
     </bean>

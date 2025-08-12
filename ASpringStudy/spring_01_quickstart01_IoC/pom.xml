@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.wsw</groupId>
-    <artifactId>spring_01_quikstart_IoC</artifactId>
+    <artifactId>spring_01_quickstart01_IoC</artifactId>
     <version>1.0-SNAPSHOT</version>
 
     <properties>
@@ -15,11 +15,11 @@
     </properties>
 
     <dependencies>
-        <!--1. 添加Spring的依赖jar包 -->
+        <!-- 1. 添加Spring的依赖jar包 -->
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-context</artifactId>
-            <version>5.3.30</version>
+            <version>6.2.7</version>
         </dependency>
     </dependencies>
 

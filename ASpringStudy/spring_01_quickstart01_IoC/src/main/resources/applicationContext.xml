@@ -2,9 +2,11 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
-    <!--2. bean标签表示配置bean
-        id属性表示给bean起名字
-        class属性表示给bean定义类型
+    <!-- 1. 导入spring的坐标spring-context，对应的版本是6.2.7 -->
+    <!-- 2. 配置Bean
+            1）bean标签表示配置bean
+            2）id属性表示给bean起名字
+            3）class属性表示给bean定义类型
     -->
     <bean id="bookDao" class="com.wsw.dao.impl.BookDaoImpl"/>
     <bean id="bookService" class="com.wsw.service.impl.BookServiceImpl"/>
