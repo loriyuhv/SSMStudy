@@ -1,7 +1,6 @@
 package com.wsw;
 
 import com.wsw.dao.BookDao;
-import com.wsw.service.BookService;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
