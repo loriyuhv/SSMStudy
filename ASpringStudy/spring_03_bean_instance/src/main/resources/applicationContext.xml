@@ -9,10 +9,9 @@
     <bean id="orderDao" class="com.wsw.factory.OrderDaoFactory" factory-method="getOrderDao"/>
 
     <!-- 方式三：使用实例工厂实例化bean -->
-    <!--
     <bean id="userFactory" class="com.wsw.factory.UserDaoFactory"/>
-    <bean id="userDao" factory-bean="userFactory" factory-method="getUserDao"/>
-    -->
+    <bean id="userDao1" factory-bean="userFactory" factory-method="getUserDao"/>
+
     <!-- 方式四：使用FactoryBean实例化bean -->
     <bean id="userDao2" class="com.wsw.factory.UserDaoFactoryBean"/>
 </beans>
