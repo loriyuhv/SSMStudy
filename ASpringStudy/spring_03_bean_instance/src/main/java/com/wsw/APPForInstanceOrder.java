@@ -7,12 +7,13 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 public class APPForInstanceOrder {
     public static void main(String[] args) {
-        // 通过静态工厂创建对象
-        // OrderDao orderDao = OrderDaoFactory.getOrderDao();
-        // orderDao.save();
+        // 传统方式通过静态工厂创建对象
+        OrderDao orderDao1 = OrderDaoFactory.getOrderDao();
+        orderDao1.save();
 
+        // Spring通过静态工厂创建对象
         ApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
-        OrderDao orderDao = context.getBean(OrderDao.class);
-        orderDao.save();
+        OrderDao orderDao2 = context.getBean(OrderDao.class);
+        orderDao2.save();
     }
 }
