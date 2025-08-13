@@ -3,9 +3,9 @@
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xmlns:context="http://www.springframework.org/schema/context"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd">
-    <!--步骤1:删除原XML配置 将配置文件中的<bean>标签删除掉-->
+    <!-- 步骤1:删除原XML配置 将配置文件中的<bean>标签删除掉 -->
     <!--<bean id="bookDao" class="com.wsw.dao.impl.BookDaoImpl"/>-->
-    <!--步骤3:配置Spring的注解包扫描-->
+    <!-- 步骤3:配置Spring的注解包扫描 -->
     <context:component-scan base-package="com.wsw.dao, com.wsw.service"/>
 
 </beans>

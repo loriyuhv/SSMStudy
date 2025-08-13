@@ -3,8 +3,11 @@ package com.wsw.config;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 
-// Configuration注解 相当于 spring xml配置文件
-// ComponentScan注解 相当于 spring xml配置文件中的注解扫描包(spring 2.5)
+/**
+ * @author loriyuhv
+ * @date 2025/8/13
+ * @description Spring配置类
+ */
 @Configuration
 @ComponentScan("com.wsw")
 public class SpringConfig {

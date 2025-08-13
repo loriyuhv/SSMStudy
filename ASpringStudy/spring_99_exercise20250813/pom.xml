@@ -5,8 +5,12 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.wsw</groupId>
-    <artifactId>spring_11_annotation_bean</artifactId>
+    <artifactId>spring_99_exercise20250813</artifactId>
     <version>1.0-SNAPSHOT</version>
+    <packaging>pom</packaging>
+    <modules>
+        <module>spring_11_annotation_bean</module>
+    </modules>
 
     <properties>
         <maven.compiler.source>21</maven.compiler.source>
