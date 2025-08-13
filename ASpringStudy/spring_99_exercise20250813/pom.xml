@@ -11,6 +11,7 @@
     <modules>
         <module>spring_11_annotation_bean</module>
         <module>spring_13_annotation_di</module>
+        <module>spring_15_mybatis_review</module>
     </modules>
 
     <properties>
