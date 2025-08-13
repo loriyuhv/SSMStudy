@@ -5,9 +5,9 @@ import com.wsw.service.BookService;
 
 public class BookServiceImpl implements BookService {
     // 注入引用类型
-    // 1.在BookServiceImpl中声明userDao属性
+    // 1.在BookServiceImpl中声明bookDao属性
     private BookDao bookDao;
-    // 2.为userDao属性提供setter方法
+    // 2.为bookDao属性提供setter方法
     public void setBookDao(BookDao bookDao) {
         this.bookDao = bookDao;
     }

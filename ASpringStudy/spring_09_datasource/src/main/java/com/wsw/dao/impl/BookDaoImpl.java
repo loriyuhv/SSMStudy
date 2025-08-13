@@ -11,6 +11,6 @@ public class BookDaoImpl implements BookDao {
 
     @Override
     public void save() {
-        System.out.println("book dao save ...name:" + username);
+        System.out.println("book dao save ...\nname:" + username);
     }
 }

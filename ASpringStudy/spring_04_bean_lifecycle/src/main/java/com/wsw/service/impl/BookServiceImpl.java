@@ -23,6 +23,7 @@ public class BookServiceImpl implements BookService, InitializingBean, Disposabl
 
     @Override
     public void save() {
+        bookDao.save();
         System.out.println("book service save ...");
     }
 

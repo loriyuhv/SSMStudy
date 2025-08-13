@@ -4,13 +4,13 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
     <bean id="bookDao" class="com.wsw.dao.impl.BookDaoImpl">
-        <!--步骤2. 配置完成多个属性构造器注入-->
+        <!-- 步骤2. 配置完成多个属性构造器注入 -->
         <constructor-arg name="databaseName" value="spring_db"/>
         <constructor-arg name="connectionNum" value="20"/>
     </bean>
     <bean id="userDao" class="com.wsw.dao.impl.UserDaoImpl"/>
     <bean id="bookService" class="com.wsw.service.impl.BookServiceImpl">
-        <!--3. 在applicationContext.xml中配置-->
+        <!-- 3. 在applicationContext.xml中配置 -->
         <constructor-arg name="bookDao" ref="bookDao"/>
         <constructor-arg name="userDao" ref="userDao"/>
     </bean>

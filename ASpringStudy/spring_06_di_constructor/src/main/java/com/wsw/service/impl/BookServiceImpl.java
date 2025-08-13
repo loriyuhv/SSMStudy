@@ -5,8 +5,8 @@ import com.wsw.dao.UserDao;
 import com.wsw.service.BookService;
 
 public class BookServiceImpl implements BookService {
-    private BookDao bookDao;
-    private UserDao userDao;
+    private final BookDao bookDao;
+    private final UserDao userDao;
     // 1.将bookDao的setter方法删除掉
     // public void setBookDao(BookDao bookDao) {
     //     this.bookDao = bookDao;

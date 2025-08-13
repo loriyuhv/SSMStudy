@@ -3,7 +3,7 @@
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
     <bean id="bookDao" class="com.wsw.dao.impl.BookDaoImpl">
-        <!--注入数组类型数据-->
+        <!-- 注入数组类型数据 -->
         <property name="array">
             <array>
                 <value>1</value>
@@ -12,7 +12,7 @@
                 <value>4</value>
             </array>
         </property>
-        <!--注入List类型数据-->
+        <!-- 注入List类型数据 -->
         <property name="list">
             <list>
                 <value>1</value>
@@ -31,7 +31,7 @@
                 <value>4</value>
             </set>
         </property>
-        <!--注入Map类型数据-->
+        <!-- 注入Map类型数据 -->
         <property name="map">
             <map>
                 <entry key="number1" value="1"/>
@@ -40,7 +40,7 @@
                 <entry key="number4" value="4"/>
             </map>
         </property>
-        <!--注入Properties类型数据-->
+        <!-- 注入Properties类型数据 -->
         <property name="properties">
             <props>
                 <prop key="province">Jiangxi</prop>

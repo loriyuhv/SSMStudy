@@ -4,9 +4,8 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
     <bean id="bookDao" class="com.wsw.dao.impl.BookDaoImpl"/>
-
     <bean id="bookService" class="com.wsw.service.impl.BookServiceImpl">
-        <!-- 3.在配置文件中使用property标签注入 -->
+        <!-- 3. 在配置文件中使用property标签注入 -->
         <property name="bookDao" ref="bookDao"/>
         <property name="connectNumber" value="200"/>
     </bean>

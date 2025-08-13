@@ -3,9 +3,9 @@
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
     <bean id="bookDao" class="com.wsw.dao.impl.BookDaoImpl"/>
-    <!--(2)在<bean>标签中添加autowire属性,通常使用按类型装配-->
+    <!-- 2.在<bean>标签中添加autowire属性，通常使用按类型装配 -->
     <bean id="bookService" class="com.wsw.service.impl.BookServiceImpl" autowire="byType">
-        <!--(1)将<property>标签删除-->
-        <!--<property name="bookDao" ref="bookDao"/>-->
+        <!-- 1.将<property>标签删除 -->
+        <!-- <property name="bookDao" ref="bookDao"/> -->
     </bean>
 </beans>

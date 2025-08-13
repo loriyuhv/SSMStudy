@@ -5,7 +5,6 @@ import com.wsw.dao.BookDao;
 import java.util.*;
 
 public class BookDaoImpl implements BookDao {
-
     private int[] array;
     private List<String> list;
     private Set<String> set;

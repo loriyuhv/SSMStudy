@@ -4,12 +4,16 @@ import com.wsw.dao.BookDao;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
-import javax.sql.DataSource;
-
-public class APP {
+/**
+ * @author loriyuhv
+ * @date 2025/8/13
+ * @description 加载Properties文件运行
+ */
+public class AppSystemProperties {
     public static void main(String[] args) {
         ApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
-        DataSource dataSource = (DataSource) context.getBean("dataSource");
-        System.out.println(dataSource);
+        BookDao bookDao = (BookDao) context.getBean("bookDao");
+        bookDao.save();
+
     }
 }
