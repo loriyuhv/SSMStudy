@@ -11,7 +11,6 @@ import java.util.List;
 
 
 public interface AccountDao {
-
     @Insert("insert into tb_account (id, name, money) values (#{id}, #{name}, #{money});")
     void save(Account account);
 

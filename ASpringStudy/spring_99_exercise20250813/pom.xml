@@ -10,6 +10,7 @@
     <packaging>pom</packaging>
     <modules>
         <module>spring_11_annotation_bean</module>
+        <module>spring_13_annotation_di</module>
     </modules>
 
     <properties>

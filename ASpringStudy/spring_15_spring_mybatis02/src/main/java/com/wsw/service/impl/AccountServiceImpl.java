@@ -10,8 +10,11 @@ import java.util.List;
 
 @Service
 public class AccountServiceImpl implements AccountService {
-    @Autowired
-    private AccountDao accountDao;
+    // @Autowired
+    private final AccountDao accountDao;
+    public AccountServiceImpl(AccountDao accountDao) {
+        this.accountDao = accountDao;
+    }
 
     @Override
     public void save(Account account) {

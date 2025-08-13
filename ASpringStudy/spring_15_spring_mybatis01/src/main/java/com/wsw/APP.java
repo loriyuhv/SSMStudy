@@ -22,7 +22,7 @@ public class APP {
         SqlSession sqlSession = sqlSessionFactory.openSession();
         // 5. 执行SqlSession对象执行查询，获取结果User
         AccountDao accountDao = sqlSession.getMapper(AccountDao.class);
-        Account ac = accountDao.findById(1);
+        Account ac = accountDao.findById(20197360);
         System.out.println(ac);
         // 6. 释放资源
         sqlSession.close();

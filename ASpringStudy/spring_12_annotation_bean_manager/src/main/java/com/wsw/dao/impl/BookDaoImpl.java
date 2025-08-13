@@ -2,17 +2,20 @@ package com.wsw.dao.impl;
 
 import com.wsw.dao.BookDao;
 import org.springframework.context.annotation.Scope;
-import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Repository;
 
 import javax.annotation.PostConstruct;
 import javax.annotation.PreDestroy;
 
-// 步骤2:Dao上添加注解  在BookDaoImpl类上添加@Component注解
 @Repository("bookDao")
+// Scope注解：配置bean的作用范围：prototype：原型 singleton：单例（默认）
 // @Scope("prototype")
 @Scope("singleton")
 public class BookDaoImpl implements BookDao {
+    public BookDaoImpl() {
+        System.out.println("BookDaoImpl is constructed ...");
+    }
+
     @Override
     public void save() {
         System.out.println("book dao save ...");

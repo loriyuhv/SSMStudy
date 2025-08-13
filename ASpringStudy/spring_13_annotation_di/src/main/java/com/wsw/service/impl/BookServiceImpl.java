@@ -4,12 +4,15 @@ import com.wsw.dao.BookDao;
 import com.wsw.service.BookService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Service;
 
 @Service
 public class BookServiceImpl implements BookService {
-    // 推荐使用构造器注入，构造器注入时，如果有同类型多个bean注入，为了解决类型冲突
-    //      需要使用@Primary指定主要bean。
+    /*推荐使用构造器注入，构造器注入时，如果有同类型多个bean注入，为了解决类型冲突
+    需要使用@Primary指定主要bean。或者在构造函数形参前使用@Qualifier("bookDao2")
+    指定。
+     */
     private final BookDao bookDao;
 
     public BookServiceImpl(BookDao bookDao) {

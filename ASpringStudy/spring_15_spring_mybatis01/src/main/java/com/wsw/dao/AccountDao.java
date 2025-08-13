@@ -19,8 +19,10 @@ public interface AccountDao {
 
     @Update("update tb_account set name = #{name} , money = #{money} where id = #{id};")
     void update(Account account);
+
     @Select("select * from tb_account;")
     List<Account> findAll();
+
     @Select("select * from tb_account where id = #{id};")
     Account findById(Integer id);
 }
