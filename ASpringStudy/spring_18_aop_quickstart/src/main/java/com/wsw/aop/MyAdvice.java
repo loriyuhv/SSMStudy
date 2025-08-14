@@ -19,8 +19,9 @@ import org.springframework.stereotype.Component;
 public class MyAdvice {
     // 步骤四：定义切入点
     // 3. 定义切入点（切入点）
-    @Pointcut("execution(void com.wsw.dao.BookDao.update())")
-    private void pt(){}
+    // @Pointcut("execution(void com.wsw.dao.BookDao.update())")
+    @Pointcut("execution(void com.wsw.dao.impl.BookDaoImpl.update())")
+    private void pt() {}
     // 步骤五：绑定切入点与通知关系，并指定通知添加到原始连接点的具体执行位置
     // 5. 绑定切入点与通知（创建切面）
     @Before("pt()")

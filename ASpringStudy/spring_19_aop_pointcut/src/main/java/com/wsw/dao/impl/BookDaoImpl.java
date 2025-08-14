@@ -5,15 +5,15 @@ import org.springframework.stereotype.Repository;
 
 /**
  * @author loriyuhv
- * @date 2025/8/13
+ * @date 2025/8/14
  * @description BookDao接口实现类
  */
-// 步骤二：定义dao接口与实现类
+
 @Repository
 public class BookDaoImpl implements BookDao {
     @Override
     public void save() {
-        // System.out.println(System.currentTimeMillis());
+        System.out.println(System.currentTimeMillis());
         System.out.println("book dao save ...");
     }
 
