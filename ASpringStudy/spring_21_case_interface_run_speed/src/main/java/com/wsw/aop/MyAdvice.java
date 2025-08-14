@@ -19,15 +19,15 @@ public class MyAdvice {
     private void servicePt() {}
 
     @Around("servicePt()")
-    public Object runSpeed(ProceedingJoinPoint joinPoint) throws Throwable {
-        Signature signature = joinPoint.getSignature();
+    public Object runSpeed(ProceedingJoinPoint proceedingJoinPoint) throws Throwable {
+        Signature signature = proceedingJoinPoint.getSignature();
         String className = signature.getDeclaringTypeName();
         String methodName = signature.getName();
 
         long startTime = System.currentTimeMillis();
         Object proceed = null;
         for (int i = 0; i < 10000; i++) {
-            proceed = joinPoint.proceed();
+            proceed = proceedingJoinPoint.proceed();
         }
         long endTime = System.currentTimeMillis();
         long duration = endTime - startTime;
