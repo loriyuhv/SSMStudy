@@ -6,30 +6,24 @@ import org.springframework.web.servlet.support.AbstractDispatcherServletInitiali
 
 /**
  * @author loriyuhv
- * @ClassName ServletContainersInitConfig
- * @date 2024/4/9 8:01
- * @description servlet容器启动的配置，从而在里面加载spring的配置
+ * @date 2025/8/15
+ * @description Servlet容器初始化配置类
  */
-// 4. 定义一个servlet容器启动的配置类，在里面加载spring的配置
 public class ServletContainersInitConfig extends AbstractDispatcherServletInitializer {
-    // 加载SpringMVC容器配置
-    // WebApplicationContext是SpringMVC最终体现的对象，也就是说SpringMVC容器最终体现的对象是WebApplicationContext
+    // 加载SpringMVC容器的配置
     @Override
     protected WebApplicationContext createServletApplicationContext() {
-        // 初始化了一个空的容器对象
         AnnotationConfigWebApplicationContext context = new AnnotationConfigWebApplicationContext();
-        // 加载具体的配置信息
-        context.register(SpringMvcConfig.class);
+        context.register(SpringMVCConfig.class);
         return context;
     }
 
-    // 设置哪些请求归属SpringMVC处理
+    // 设置哪些请求归Spring进行管理
     @Override
     protected String[] getServletMappings() {
         return new String[]{"/"};
     }
 
-    // 加载Spring容器配置
     @Override
     protected WebApplicationContext createRootApplicationContext() {
         return null;
