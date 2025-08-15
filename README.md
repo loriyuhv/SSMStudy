@@ -22,10 +22,6 @@
 
 - pom文件
 
-  ```xml
-  <!-- Servlet 与 spring-webmvc -->
-  ```
-
 ### 1.5 MyBatis
 
 - 版本
