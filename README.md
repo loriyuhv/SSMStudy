@@ -8,11 +8,15 @@
 
 - 版本：17.0.16
 
-### 1.2 Spring
+### 1.2 Maven
+
+- 版本：3.9.11
+
+### 1.3 Spring
 
 - 版本：6.2.7
 
-### 1.3 SpringMVC
+### 1.4 SpringMVC
 
 - 版本：6.2.7
 
@@ -22,7 +26,7 @@
   <!-- Servlet 与 spring-webmvc -->
   ```
 
-### 1.4 MyBatis
+### 1.5 MyBatis
 
 - 版本
 
