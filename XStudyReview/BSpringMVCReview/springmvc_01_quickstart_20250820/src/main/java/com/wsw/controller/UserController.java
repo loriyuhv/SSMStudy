@@ -6,18 +6,14 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 /**
  * @author loriyuhv
- * @ClassName BookController
- * @date 2024/4/9 21:47
- * @description Book
+ * @date 2025/8/20
+ * @description User表现层
  */
-
 @Controller
-@RequestMapping("/book")
-public class BookController {
+public class UserController {
     @RequestMapping("/save")
     @ResponseBody
     public String save() {
-        System.out.println("book save ...");
-        return "{'module': 'book save'}";
+        return "Hello spring mvc!!!";
     }
 }

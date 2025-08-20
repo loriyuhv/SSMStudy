@@ -1,15 +1,15 @@
 package com.wsw.config;
 
+import jakarta.servlet.Filter;
 import org.springframework.web.filter.CharacterEncodingFilter;
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
 
-import javax.servlet.Filter;
 
 /**
  * @author loriyuhv
  * @ClassName ServletContainersInitConfig
  * @date 2024/4/9 21:45
- * @description TODO
+ * @description
  */
 
 public class ServletContainersInitConfig extends AbstractAnnotationConfigDispatcherServletInitializer {
@@ -43,6 +43,7 @@ public class ServletContainersInitConfig extends AbstractAnnotationConfigDispatc
     protected Filter[] getServletFilters() {
         CharacterEncodingFilter filter = new CharacterEncodingFilter();
         filter.setEncoding("UTF-8");
+        // return new Filter[]{filter};
         return new Filter[]{filter};
     }
 }
