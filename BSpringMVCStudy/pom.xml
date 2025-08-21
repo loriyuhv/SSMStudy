@@ -14,6 +14,7 @@
         <module>springmvc_05_response</module>
         <module>springmvc_06_rest</module>
         <module>springmvc_07_rest_case</module>
+        <module>springmvc_00_demo</module>
     </modules>
 
     <properties>
@@ -26,8 +27,15 @@
         <!-- Servlet -->
         <dependency>
             <groupId>jakarta.servlet</groupId>
+            <!-- Tomcat10：开始用jakarta.*.* -->
             <artifactId>jakarta.servlet-api</artifactId>
             <version>6.0.0</version>
+            <!--
+             scope：jar依赖作用范围的描述
+             compile（默认）：在编译、运行、测试均有效
+             provided：在编译、测试有效
+             -->
+            <scope>provided</scope>
         </dependency>
         <!-- Spring MVC -->
         <dependency>
