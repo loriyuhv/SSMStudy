@@ -12,6 +12,8 @@
     <modules>
         <module>springmvc_01_quickstart</module>
         <module>springmvc_05_response</module>
+        <module>springmvc_06_rest</module>
+        <module>springmvc_07_rest_case</module>
     </modules>
 
     <properties>
