@@ -17,7 +17,7 @@ import java.io.PrintWriter;
 @WebServlet("/user/update")
 public class UserUpdateServlet extends HttpServlet {
     @Override
-    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException {
         // 1. 接收请求参数
         String name = req.getParameter("name");
         System.out.println("servlet update name ===> " + name);
