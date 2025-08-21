@@ -6,8 +6,7 @@ import org.springframework.web.servlet.support.AbstractDispatcherServletInitiali
 
 /**
  * @author loriyuhv
- * @ClassName ServletContainersInitConfig
- * @date 2024/4/9 8:01
+ * @date 2025/8/21
  * @description servlet容器启动的配置，从而在里面加载spring的配置
  */
 // 4. 定义一个servlet容器启动的配置类，在里面加载spring的配置
