@@ -18,7 +18,7 @@
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-context</artifactId>
-            <version>6.2.7</version>
+            <version>6.2.10</version>
         </dependency>
         <!-- 步骤一：导入aop相关坐标 -->
         <dependency>

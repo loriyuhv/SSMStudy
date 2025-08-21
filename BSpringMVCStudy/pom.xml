@@ -16,6 +16,7 @@
         <module>springmvc_07_rest_case</module>
         <module>springmvc_00_demo</module>
         <module>springmvc_02_bean_load</module>
+        <module>springmvc_03_request_mapping</module>
     </modules>
 
     <properties>

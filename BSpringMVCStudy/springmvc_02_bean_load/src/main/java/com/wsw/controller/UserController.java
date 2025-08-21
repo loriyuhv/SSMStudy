@@ -1,7 +1,9 @@
 package com.wsw.controller;
 
+import com.wsw.domain.User;
 import com.wsw.service.UserService;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
@@ -20,9 +22,9 @@ public class UserController {
 
     @ResponseBody
     @RequestMapping("/user/save")
-    public String save() {
-        System.out.println("user controller save ...");
-        userService.save();
+    public String save(@RequestBody User user) {
+        System.out.println("user controller save ..."+user);
+        userService.save(user);
         return "{'module': 'user save'}";
     }
 }
