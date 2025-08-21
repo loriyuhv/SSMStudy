@@ -4,7 +4,7 @@ package com.wsw.domain;
  * @author loriyuhv
  * @ClassName User
  * @date 2024/4/9 22:00
- * @description TODO
+ * @description User
  */
 
 public class User {
