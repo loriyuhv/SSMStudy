@@ -1,10 +1,12 @@
 package com.wsw.controller;
 
 import com.wsw.domain.User;
+import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Arrays;
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -108,7 +110,20 @@ public class UserController {
         return "{'module': 'list pojo param for json'}";
     }
 
-
+    /**
+     * @description 日期参数
+     */
+    @ResponseBody
+    @RequestMapping("/dateParam")
+    public String dateParam(
+            Date date1,
+            @DateTimeFormat(pattern="yyyy-MM-dd") Date date2,
+            @DateTimeFormat(pattern="yyyy-MM-dd HH:mm:ss") Date date3) {
+        System.out.println("参数传递 date1 ==> " + date1);
+        System.out.println("参数传递 date2 ==> " + date2);
+        System.out.println("参数传递 date3 ==> " + date3);
+        return "{'module': 'date param'}";
+    }
 
 
 }
