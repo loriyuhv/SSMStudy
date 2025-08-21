@@ -9,8 +9,8 @@ import org.springframework.web.servlet.config.annotation.EnableWebMvc;
  * @date 2025/8/21
  * @description
  */
-@Configuration
 @EnableWebMvc
+@Configuration
 @ComponentScan("com.wsw.controller")
 public class SpringMvcConfig {
 }

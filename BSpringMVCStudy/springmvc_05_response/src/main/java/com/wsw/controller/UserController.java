@@ -17,6 +17,9 @@ import java.util.List;
 public class UserController {
     /**
      * @description 响应页面/跳转界面
+     * 注意1：此处不能添加@ResponseBody,如果加了该注入，
+     *  会直接将page.jsp当字符串返回前端。
+     * 注意2：方法需要返回String。
      */
     @RequestMapping("/toJumpPage")
     public String toJumpPage() {
@@ -27,6 +30,7 @@ public class UserController {
     /**
      * @description 响应文本数据
      */
+    // 此处注解不能省略，否则会将response text当作页面名称查找，导致404错误。
     @ResponseBody
     @RequestMapping("/toText")
     public String toText() {
