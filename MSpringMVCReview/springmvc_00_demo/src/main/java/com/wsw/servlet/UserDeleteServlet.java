@@ -17,7 +17,7 @@ import java.io.PrintWriter;
 @WebServlet("/user/delete")
 public class UserDeleteServlet extends HttpServlet {
     @Override
-    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException {
         // 1. 接受请求参数
         String name = req.getParameter("name");
         System.out.println("servlet delete name ===> " + name);
