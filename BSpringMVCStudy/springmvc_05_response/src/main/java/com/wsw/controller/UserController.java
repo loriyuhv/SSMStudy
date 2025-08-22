@@ -69,5 +69,4 @@ public class UserController {
         userList.add(user2);
         return userList;
     }
-
 }

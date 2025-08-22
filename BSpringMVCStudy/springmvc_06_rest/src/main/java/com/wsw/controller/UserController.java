@@ -57,5 +57,4 @@ public class UserController {
         System.out.println("user controller getAll ..." );
         return "{'module': 'user getAll'}";
     }
-
 }
