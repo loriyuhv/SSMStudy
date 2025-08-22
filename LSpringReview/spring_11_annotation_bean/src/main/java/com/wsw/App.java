@@ -3,7 +3,6 @@ package com.wsw;
 import com.wsw.config.SpringConfig;
 import com.wsw.dao.BookDao;
 import com.wsw.service.BookService;
-import com.wsw.service.impl.BookServiceImpl;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
