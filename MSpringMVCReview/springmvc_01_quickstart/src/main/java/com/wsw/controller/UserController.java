@@ -6,15 +6,15 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 /**
  * @author loriyuhv
- * @date 2025/8/22
+ * @date 2025/8/23
  * @description
  */
 @Controller
 public class UserController {
     @ResponseBody
-    @RequestMapping("users/delete")
-    public String delete(String name) {
-        System.out.println("user controller delete ==> " + name);
-        return "{'module': 'user delete'}";
+    @RequestMapping("/user/save")
+    public String save() {
+        System.out.println("user controller save ...");
+        return "{'module': 'spring mvc'}";
     }
 }

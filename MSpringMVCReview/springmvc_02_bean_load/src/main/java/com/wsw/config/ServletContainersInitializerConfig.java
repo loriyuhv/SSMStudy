@@ -4,13 +4,13 @@ import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatche
 
 /**
  * @author loriyuhv
- * @date 2025/8/22
+ * @date 2025/8/23
  * @description
  */
-public class ServletContainersInitConfig extends AbstractAnnotationConfigDispatcherServletInitializer {
+public class ServletContainersInitializerConfig extends AbstractAnnotationConfigDispatcherServletInitializer {
     @Override
     protected Class<?>[] getRootConfigClasses() {
-        return null;
+        return new Class[]{SpringConfig.class};
     }
 
     @Override
@@ -20,6 +20,6 @@ public class ServletContainersInitConfig extends AbstractAnnotationConfigDispatc
 
     @Override
     protected String[] getServletMappings() {
-        return new String[]{"/user/*"};
+        return new String[]{"/"};
     }
 }

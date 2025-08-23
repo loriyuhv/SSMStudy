@@ -6,8 +6,7 @@
         <artifactId>MSpringMVCReview</artifactId>
         <version>1.0-SNAPSHOT</version>
     </parent>
-
-    <artifactId>springmvc_00_demo</artifactId>
+    <artifactId>springmvc_04_request_param</artifactId>
     <packaging>war</packaging>
 
     <dependencies>
@@ -20,14 +19,10 @@
             <groupId>org.springframework</groupId>
             <artifactId>spring-webmvc</artifactId>
         </dependency>
-    </dependencies>
 
-    <build>
-        <plugins>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-compiler-plugin</artifactId>
-            </plugin>
-        </plugins>
-    </build>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+        </dependency>
+    </dependencies>
 </project>

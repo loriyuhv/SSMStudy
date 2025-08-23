@@ -10,6 +10,10 @@
     <packaging>pom</packaging>
     <modules>
         <module>springmvc_00_demo</module>
+        <module>springmvc_01_quickstart</module>
+        <module>springmvc_02_bean_load</module>
+        <module>springmvc_03_request_mapping</module>
+        <module>springmvc_04_request_param</module>
     </modules>
 
     <properties>
@@ -58,6 +62,7 @@
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-compiler-plugin</artifactId>
+                    <version>4.0.0-beta-2</version>
                     <configuration>
                         <parameters>true</parameters>
                     </configuration>
